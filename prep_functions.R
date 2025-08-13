@@ -130,15 +130,15 @@ create_periods <- function(start_days, end_days) {
 }
 
 
-calculate_drainage <- function(precipitation_daily, lambda = lambda, threshold = threshold) {
-  n <- length(precipitation_daily)
-  funS <- numeric(n)  # Vetor para armazenar a saturação diária
+# calculate_drainage <- function(precipitation_daily, lambda = lambda, threshold = threshold) {
+#   n <- length(precipitation_daily)
+#   funS <- numeric(n)  # Vetor para armazenar a saturação diária
   
-  for (t in 1:n) {
-    # Soma acumulada com decaimento exponencial
-    decay_effect <- sapply(1:t, function(i) precipitation_daily[i] * exp(-lambda * (t - i)))
-    funS[t] <- min(threshold, sum(decay_effect))
-  }
+#   for (t in 1:n) {
+#     # Soma acumulada com decaimento exponencial
+#     decay_effect <- sapply(1:t, function(i) precipitation_daily[i] * exp(-lambda * (t - i)))
+#     funS[t] <- min(threshold, sum(decay_effect))
+#   }
   
-  return(funS)
-}
+#   return(funS)
+# }
