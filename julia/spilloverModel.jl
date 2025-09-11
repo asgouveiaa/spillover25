@@ -31,10 +31,10 @@ using Plots
         # La Niña effect
         b = 1, [description = "Baseline precipitation"]
         ω = 3, [description = "Seasonal variation amplitude"]
-        ϵ = 0.5, [description = "Noise intensity"]
+        ϵ = 100, [description = "Noise intensity"]
         N = 2, [description = "La Niña effect intensity"]
         f = 5, [description = "Flood intensity"]
-        Ω = 0.4, [description = "Optimal climate"]
+        Ω = 0, [description = "Optimal climate"]
     end
     @variables begin
         S_h(t)
@@ -53,7 +53,7 @@ using Plots
         hₑ(t)
     end
     @equations begin
-        ξ ~ abs((1 / (2 * ω)) * (b + ω * (1 + sin(2 * π * f * t)) + ϵ * randn()) - Ω)
+        ξ ~ abs((1 / (2 * ω)) * (b + ω * (1 + sin(2 * π * (t/365) - π/2)) + ϵ * randn()) - Ω)
         Λ ~ λ * (1 + ξ * λᵦ)
         Kₑ ~ K * (1 - ξ * (1 - Kₛ))
         Tₑ ~ (rem(t, 7) >= 5) * (((1 + 0.5 * ξ) / 24) * (Tₘ - T) + T) * ((ξ > 0.6) * ξ)
@@ -79,7 +79,7 @@ u0 = [sp.S_h => 100.0,
     sp.P => 0.0,
     sp.C_h => 400.0]
 
-prob = ODEProblem(sp, u0, (0, 40.0))
+prob = ODEProblem(sp, u0, (0, 600.0))
 sol = solve(prob, Tsit5())
 
 plot(sol; idxs=[sp.C_h])
