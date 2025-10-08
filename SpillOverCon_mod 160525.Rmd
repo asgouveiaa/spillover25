@@ -88,7 +88,7 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 pacman::p_load(tidyverse, deSolve, magrittr, ggpubr, formattable, YAML)
 
 # Load precipitation functions
-source("prep_functions.R")
+source("./new/prep_functions.R")
 ```
 
 ## Model Configuration
@@ -192,6 +192,35 @@ precipitation_data <- generate_precipitation_dataset(
   mutate(p_normalizado = (precipitation - min(precipitation)) / 
                         (max(precipitation) - min(precipitation)))
 ```
+
+
+```{r}
+
+precip1 <- precipitation_data %>% 
+  filter(year == 1) %>% 
+  ggplot() + 
+  #geom_vline(xintercept = 365, linetype = 2) +
+  geom_line(aes(x = day, y = precipitation), color = "skyblue3") + 
+  #geom_text(label = "1 year", x=350, y=6, angle = 90) +
+  labs(x = "Day", y = "Daily precipitation volume (mm)") + 
+  theme_bw(base_size = 12) +
+  scale_x_continuous(expand = c(0, 0), breaks = seq(0, 365, 50)); precip1  # A cada 30 dias
+
+ggsave("./book_chapter/precip1.png",precip1,dpi = 300,width = 6,height = 4)
+
+precip2 <- precipitation_data %>% 
+  mutate(month_name = month(date, label = T)) %>% 
+  filter(year == 1) %>% 
+  ggplot() +
+  geom_col(aes(x = month_name, precipitation), fill = "skyblue3") +
+  labs(x = "Month", y = "Montlhy precipitation volume (mm)") +
+  theme_bw(base_size = 12); precip2
+
+ggsave("./book_chapter/precip2.png",precip2,dpi = 300, width = 6,height = 4)
+
+```
+
+
 
 ## Model Definition
 
