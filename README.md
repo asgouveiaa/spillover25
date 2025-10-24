@@ -9,6 +9,9 @@ The model framework exemplifies how the weather seasonality and extremes events 
 
 Adapting a SIR model to account for the dynamics between susceptible, infected and recovered humans and animals. The humans are described by hunters, who search, capture and kill wild animals, and the consumers, which are characterized by individuals related or not to hunters who prepare and eat the hunted animal.
 
-https://typst.app/project/ryn5UUKtfDHjFddEwmQ4c1
+spillover_chapter
+https://typst.app/project/rKHXO9YKQFxu5BKSk2q9BD
 
+spillover hunt network
+https://typst.app/project/ryn5UUKtfDHjFddEwmQ4c1
 
