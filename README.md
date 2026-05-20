@@ -15,3 +15,4 @@ https://typst.app/project/rKHXO9YKQFxu5BKSk2q9BD
 spillover hunt network
 https://typst.app/project/ryn5UUKtfDHjFddEwmQ4c1
 
+sem1 ppt: https://docs.google.com/presentation/d/1tg8xlvrKEhfXSSCR2JEmymx5CAkn5rxt/edit?usp=drivesdk&ouid=111411105239064545804&rtpof=true&sd=true
