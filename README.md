@@ -16,3 +16,5 @@ spillover hunt network
 https://typst.app/project/ryn5UUKtfDHjFddEwmQ4c1
 
 sem1 ppt: https://docs.google.com/presentation/d/1tg8xlvrKEhfXSSCR2JEmymx5CAkn5rxt/edit?usp=drivesdk&ouid=111411105239064545804&rtpof=true&sd=true
+
+epi3 debate: https://docs.google.com/presentation/d/14BizDx6dPfV_m5HMxGZik876OZB4-AEb/edit?usp=sharing&ouid=111411105239064545804&rtpof=true&sd=true
